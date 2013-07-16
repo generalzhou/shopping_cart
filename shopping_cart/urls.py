@@ -5,13 +5,13 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    url(r'^(?P<slug>[-\w]+)$', 
+    url(r'^(?P<merchant_slug>[-\w]+)$', 
         'online_store.views.merchant_home', 
-        name='merchant_home'
+        name='merchant_home',
     ),
-    url(r'^(?P<slug>[-\w]+)/product/(?P<id>\d+)$', 
+    url(r'^(?P<merchant_slug>[-\w]+)/product/(?P<product_slug>[-\w\d]+),(?P<id>\d+)$', 
         'online_store.views.product_detail', 
-        name='product_page'
+        name='product_detail',
     ),
 
     # Uncomment the admin/doc line below to enable admin documentation:

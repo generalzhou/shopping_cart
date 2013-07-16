@@ -2,14 +2,16 @@
 {% block content %}
 
 <h1>
-	{{ merchant.name }}
+  {{ merchant.name }}
 </h1>
 
 <ul>
-	{% for product in product_list%}
-	<li>
-		{{ product.name }}
-	</li>
-	{% endfor %}
+  {% for product in product_list%}
+  <li>
+    <a href="{% url product_detail merchant.slug product.slug product.id%}">
+      {{ product.name }}
+    </a>
+  </li>
+  {% endfor %}
 </ul>
 {% endblock %}

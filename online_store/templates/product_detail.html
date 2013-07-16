@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>
+	{{ product.name }}
+</h1>
+<h2>
+	Sold by: 
+	<a href="{% url merchant_home merchant.slug %}">
+		{{ merchant.name }}
+	</a>
+</h2>
+
+<h3>
+	<a href="placeholder">
+		buy!
+	</a>
+</h3>
+
+<p>
+	{{product.description}}
+</p>
+
+
+{% endblock %}
