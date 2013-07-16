@@ -1,13 +1,18 @@
 from django.conf.urls import patterns, include, url
-
-# Uncomment the next two lines to enable the admin:
-# from django.contrib import admin
-# admin.autodiscover()
+from online_store.views import *
+from django.contrib import admin
+admin.autodiscover()
 
 urlpatterns = patterns('',
     # Examples:
-    # url(r'^$', 'shopping_cart.views.home', name='home'),
-    # url(r'^shopping_cart/', include('shopping_cart.foo.urls')),
+    url(r'^(?P<slug>[-\w]+)$', 
+    	'online_store.views.merchant_home', 
+    	name='merchant_home'
+    ),
+    url(r'^(?P<slug>[-\w]+)/product/(?P<id>\d+)$', 
+    	'online_store.views.product_detail', 
+    	name='product_page'
+    ),
 
     # Uncomment the admin/doc line below to enable admin documentation:
     # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),

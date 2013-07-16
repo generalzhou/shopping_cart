@@ -1,5 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.template.defaultfilters import slugify
+
 
 class Address(models.Model):
   user = models.ForeignKey(User)
@@ -15,12 +17,22 @@ class Address(models.Model):
 
 class Product(models.Model):
   name = models.CharField(max_length=256) 
+  slug = models.CharField(max_length=256)
   description = models.TextField()  
   price = models.DecimalField(max_digits=7, decimal_places=2)
 
+  def save(self, *args, **kwargs):
+    self.slug = slugify(self.name)
+    super(Product, self).save(*args, **kwargs)
+
 class Merchant(models.Model):
   name = models.CharField(max_length=256)
+  slug = models.CharField(max_length=256)
   products = models.ManyToManyField(Product)  
+
+  def save(self, *args, **kwargs):
+    self.slug = slugify(self.name)
+    super(Merchant, self).save(*args, **kwargs)
 
 class Order(models.Model):
   user = models.ForeignKey(User)
