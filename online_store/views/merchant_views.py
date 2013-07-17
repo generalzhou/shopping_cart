@@ -2,6 +2,13 @@ from online_store.models import *
 from django.shortcuts import render_to_response, get_object_or_404, get_list_or_404, redirect
 from django.template import RequestContext
 
+def merchant_list(request):
+	merchants = Merchant.objects.all()
+	return render_to_response('merchant_list.html',
+                            {'merchants': merchants},
+                            context_instance=RequestContext(request))
+
+
 def merchant_home(request, merchant_slug):
   merchant = get_object_or_404(Merchant, slug=merchant_slug)
   product_list = merchant.products.all()

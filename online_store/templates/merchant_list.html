@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<ul>
+	{% for merchant in merchants %}
+	<li>
+		<a href="{% url merchant_home merchant.slug %}">
+			{{merchant.name}}
+		</a>
+	</li>
+	{% endfor %}
+</ul>
+
+{% endblock %}

@@ -6,6 +6,10 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
+  url(r'^$', 
+    'online_store.views.merchant_list',
+    name='home'
+  ),
   url(r'^accounts/login\/?$', 
     'django.contrib.auth.views.login',
     name='login'
