@@ -1,0 +1,131 @@
+[
+  {
+    "pk": 1,
+    "model": "online_store.merchant",
+    "fields": {
+      "products": [
+        1,
+        2,
+        3
+      ],
+      "name": "George R R Martin",
+      "slug": "george-r-r-martin"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "online_store.merchant",
+    "fields": {
+      "products": [
+        4,
+        5,
+        6
+      ],
+      "name": "Real Cheap Apple Products",
+      "slug": "real-cheap-apple-products"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "online_store.merchant",
+    "fields": {
+      "products": [
+        7,
+        8,
+        9
+      ],
+      "name": "Shimano",
+      "slug": "shimano"
+    }
+  },
+  {
+    "pk": 1,
+    "model": "online_store.product",
+    "fields": {
+      "price": "19.99",
+      "description": "In this book, a character you love will die. It will be horrible",
+      "name": "A Game of Thrones",
+      "slug": "a-game-of-thrones"
+    }
+  },
+  {
+    "pk": 2,
+    "model": "online_store.product",
+    "fields": {
+      "price": "19.99",
+      "description": "I forgot what happens in this book but Im pretty sure terrible things happen to good people.",
+      "name": "A Clash of Kings",
+      "slug": "a-clash-of-kings"
+    }
+  },
+  {
+    "pk": 3,
+    "model": "online_store.product",
+    "fields": {
+      "price": "19.99",
+      "description": "Two words. Red wedding.",
+      "name": "A Storm of Swords",
+      "slug": "a-storm-of-swords"
+    }
+  },
+  {
+    "pk": 4,
+    "model": "online_store.product",
+    "fields": {
+      "price": "15",
+      "description": "It's not counterfeit, we swear!",
+      "name": "Totally real iPhone 5",
+      "slug": "totally-real-iphone-5"
+    }
+  },
+  {
+    "pk": 5,
+    "model": "online_store.product",
+    "fields": {
+      "price": "500",
+      "description": "We have the latests models before Apple even know about them!",
+      "name": "iPhone 8",
+      "slug": "iphone-8"
+    }
+  },
+  {
+    "pk": 6,
+    "model": "online_store.product",
+    "fields": {
+      "price": "100",
+      "description": "Because who has time to take their phone out of their pockets in order to avoid talking to real people?",
+      "name": "iWatch",
+      "slug": "iwatch"
+    }
+  },
+  {
+    "pk": 7,
+    "model": "online_store.product",
+    "fields": {
+      "price": "1000",
+      "description": "We don't even know how to spell this thing but it's a bike part so it will definitely be expensive!",
+      "name": "Rear Derailleur",
+      "slug": "rear-derailleur"
+    }
+  },
+  {
+    "pk": 8,
+    "model": "online_store.product",
+    "fields": {
+      "price": "4000",
+      "description": "Made using the metal alloy from the spaceships in Independence Day and hand crafted by people making over minimum wage in 1st world countries!",
+      "name": "Race Helmet",
+      "slug": "race-helmet"
+    }
+  },
+  {
+    "pk": 9,
+    "model": "online_store.product",
+    "fields": {
+      "price": "200",
+      "description": "They're called shoes but you can't walk on them!",
+      "name": "Bike shoes",
+      "slug": "bike-shoes"
+    }
+  }
+]
