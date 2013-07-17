@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from django.template.defaultfilters import slugify
+from django.core.urlresolvers import reverse
 
 
 class Address(models.Model):
@@ -24,6 +25,10 @@ class Product(models.Model):
   def save(self, *args, **kwargs):
     self.slug = slugify(self.name)
     super(Product, self).save(*args, **kwargs)
+
+  def get_url(self):
+  	return reverse('product_detail', args=(self.merchant_set.all()[0].slug, self.slug, self.id))
+
 
 class Merchant(models.Model):
   name = models.CharField(max_length=256)

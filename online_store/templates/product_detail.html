@@ -2,24 +2,25 @@
 {% block content %}
 
 <h1>
-	{{ product.name }}
+  {{ product.name }}
 </h1>
 <h2>
-	Sold by: 
-	<a href="{% url merchant_home merchant.slug %}">
-		{{ merchant.name }}
-	</a>
+  Sold by: 
+  <a href="{% url merchant_home merchant.slug %}">
+    {{ merchant.name }}
+  </a>
 </h2>
-
+Price: {{ product.price }}
 <h3>
-	<a href="placeholder">
-		buy!
-	</a>
+  <form method='post' action='{% url cart %}'>
+    {% csrf_token %}
+    <input type='hidden' name='product_id' value='{{ product.id }}'>
+    <input type='submit' value='buy!'/ >
+  </form>
 </h3>
 
 <p>
-	{{product.description}}
+  {{product.description}}
 </p>
-
 
 {% endblock %}

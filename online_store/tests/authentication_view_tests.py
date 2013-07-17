@@ -29,8 +29,7 @@ class UserAuthenticationViewTests(TestCase):
     password = 'password'
     user = User.objects.create_user(username, email, password)
     test_client = Client()
-    response = test_client.post(reverse('login'), {'username':username,
-                                                    'password' : password})
+    test_client.post(reverse('login'),{'username':username, 'password' : password})
 
     self.assertEquals(test_client.session['_auth_user_id'], user.id)
 

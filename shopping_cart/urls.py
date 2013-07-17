@@ -22,6 +22,10 @@ urlpatterns = patterns('',
     'online_store.views.profile',
     name='profile'
   ),
+  url(r'^accounts/cart\/?$',
+    'online_store.views.cart',
+    name='cart'
+  ),
   url(r'^(?P<merchant_slug>[-\w]+)\/?$', 
     'online_store.views.merchant_home', 
     name='merchant_home'
