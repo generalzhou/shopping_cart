@@ -19,8 +19,8 @@ urlpatterns = patterns('',
     name='signup'
   ),
   url(r'^accounts/profile\/?$',
-    'online_store.views.account',
-    name='account'
+    'online_store.views.profile',
+    name='profile'
   ),
   url(r'^(?P<merchant_slug>[-\w]+)\/?$', 
     'online_store.views.merchant_home', 

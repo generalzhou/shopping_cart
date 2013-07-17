@@ -53,7 +53,7 @@ def signup(request,*args, **kwargs):
                                 context_instance=RequestContext(request))
 
 @login_required()
-def account(request):
+def profile(request):
   return render_to_response('registration/profile.html',
                             {'user': request.user},
                             context_instance=RequestContext(request))

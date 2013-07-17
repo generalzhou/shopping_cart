@@ -1,3 +1,4 @@
+
 <html>
 <head>
 	<title>
@@ -5,7 +6,14 @@
 	</title>
 </head>
 <body>
-	
+	{% if user.is_anonymous %}
+		<a href="{% url login %}">login</a>
+		<a href="{% url signup %}">signup</a>
+	{% else %}
+		<a href="{% url profile %}">{{ user.username }}</a>
+		<a href="{% url logout %}">logout</a>
+	{% endif %}
+
 	{% block content %}
 	{% endblock %}
 
