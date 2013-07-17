@@ -1,4 +1,4 @@
-from models import *
+from online_store.models import *
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
@@ -7,22 +7,6 @@ from django.contrib.auth.decorators import login_required
 from django.template import RequestContext
 from online_store.forms import *
 
-def merchant_home(request, merchant_slug):
-  merchant = get_object_or_404(Merchant, slug=merchant_slug)
-  product_list = merchant.products.all()
-  return render_to_response('merchant_home.html',
-                            {'merchant': merchant,
-                            'product_list': product_list},
-                            context_instance=RequestContext(request))
-
-
-def product_detail(request, merchant_slug, product_slug, id):
-  merchant = get_object_or_404(Merchant, slug=merchant_slug)
-  product = get_object_or_404(merchant.products, id=id)
-  return render_to_response('product_detail.html',
-                            {'merchant': merchant,
-                            'product': product},
-                            context_instance=RequestContext(request))
 
 def my_logout(request):
   logout(request)
