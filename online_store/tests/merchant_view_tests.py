@@ -2,7 +2,7 @@ from django.test import TestCase
 from django.test.client import Client
 from online_store.models import *
 
-class ContactListViewTests(TestCase):
+class MerchantListViewTests(TestCase):
 
   def test_merchant_home(self):
     "merchant_home view should send merchant and merchant products to the template"
