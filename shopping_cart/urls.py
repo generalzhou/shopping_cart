@@ -30,6 +30,12 @@ urlpatterns = patterns('',
     'online_store.views.cart',
     name='cart'
   ),
+  url(r'^admin/doc/', 
+    include('django.contrib.admindocs.urls')
+  ),
+  url(r'^admin/', 
+    include(admin.site.urls)
+  ),
   url(r'^(?P<merchant_slug>[-\w]+)\/?$', 
     'online_store.views.merchant_home', 
     name='merchant_home'
@@ -38,9 +44,4 @@ urlpatterns = patterns('',
     'online_store.views.product_detail', 
     name='product_detail'
   )
-  # Uncomment the admin/doc line below to enable admin documentation:
-  # url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
-
-  # Uncomment the next line to enable the admin:
-  # url(r'^admin/', include(admin.site.urls)),
 )
